@@ -1,21 +1,20 @@
 ##
 ## Functions included in this script are:
-## . makeCacheMatrix(): Make an object that has the possibility to hold
-##                      specified matrix and its inverse
-## . cacheSolve(): Returns the inverse of specified matrix.
+## . makeCacheMatrix(): Make an object with functions to set and get a
+##                      matrix and its inverse
+## . cacheSolve(): Returns the inverse of specified cache matrix.
 ##
 
 ##
 ## Function: makeCacheMatrix()
 ##
-## Make an object that has the possibility to hold a specified matrix
-## and its inverse
-## Constructor assumes the parameter is a square matrix
+## Returns an object with functions to set and get a matrix and its inverse.
+## Function assumes the specified parameter is a square matrix
 ##
-## Operation $get() will return the matrix
-## Operation $set() shall be used to set the matrix 
-## Operation $getInverse() will return the inverse matrix if available
-## Operation $setInverse() shall be used to set the inverse matrix
+## Function $getMatrix() : will return the matrix
+## Function $setMatrix() : shall be used to set the matrix 
+## Function $getInverse(): will return the inverse matrix if available
+## Function $setInverse(): shall be used to set the inverse matrix
 ##
 makeCacheMatrix <- function(x = matrix()) {
     inverse <- NULL
@@ -38,9 +37,9 @@ makeCacheMatrix <- function(x = matrix()) {
 ##
 ## Function: cacheSolve()
 ##
-## Returns the inverse of specified matrix.
-## Function parameter must have been created with makeCacheMatrix()
-## If inverse of matrix has been calculated and cached, this will be returned.
+## Returns the inverse of specified cache matrix.
+## Specified function parameter must have been created with makeCacheMatrix()
+## If inverse of matrix has been calculated and cached this will be returned.
 ## If inverse of matrix has not been calculated it will be calculated,
 ##     cached and returned.
 ##
